@@ -17,7 +17,7 @@ private:
 	void initTextures();
 	void initVariables();
 
-	Vector2 moveSpeed, playerPos;
+	Vector2 playerSpeed, playerPos;
 
 	void unload();
 };

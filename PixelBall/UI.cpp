@@ -18,20 +18,21 @@ void UI::update()
 
 void UI::render()
 {
-	DrawTexture(background, 0, 0, WHITE);
+	DrawText(("Score: " + std::to_string(score)).c_str(), 0, 0, 24, GREEN);	
+	DrawLine(540, 0, 540, 720, WHITE);
 }
 
 void UI::initTextures()
 {
-	background = LoadTexture("Textures/Background/background.png");
+
 }
 
 void UI::initvariables()
 {
-
+	score = 0;
 }
 
 void UI::unload()
 {
-	UnloadTexture(background);
+
 }

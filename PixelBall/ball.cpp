@@ -13,25 +13,27 @@ Ball::~Ball()
 
 void Ball::update()
 {
-
+	ballPos.x += ballSpeed.x * GetFrameTime();
+	ballPos.y += ballSpeed.y * GetFrameTime();
 }
 
 void Ball::render()
 {
-	DrawTexture(ball, 540, 360, WHITE);
+	DrawCircle(ballPos.x, ballPos.y , 20.0f, WHITE);
 }
 
 void Ball::initTextures()
 {
-	ball = LoadTexture("Textures/Ball/ball.png");
+
 }
 
 void Ball::initVariables()
 {
-
+	ballPos = { 540.0f, 360.0f };
+	ballSpeed = { 50.0f, 50.0f };
 }
 
 void Ball::unload()
 {
-	UnloadTexture(ball);
+
 }

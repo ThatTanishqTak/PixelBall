@@ -14,13 +14,13 @@ Player::~Player()
 void Player::update()
 {
 	if (IsKeyDown(KEY_W))
-		playerPos.y -= moveSpeed.y * GetFrameTime();
+		playerPos.y -= playerSpeed.y * GetFrameTime();
 	if (IsKeyDown(KEY_S))
-		playerPos.y += moveSpeed.y * GetFrameTime();
+		playerPos.y += playerSpeed.y * GetFrameTime();
 	if (IsKeyDown(KEY_A))
-		playerPos.x -= moveSpeed.x * GetFrameTime();
+		playerPos.x -= playerSpeed.x * GetFrameTime();
 	if (IsKeyDown(KEY_D))
-		playerPos.x += moveSpeed.x * GetFrameTime();
+		playerPos.x += playerSpeed.x * GetFrameTime();
 
 	if (playerPos.x <= 0)
 		playerPos.x = 0;
@@ -34,7 +34,7 @@ void Player::update()
 
 void Player::render()
 {
-	DrawRectangle(playerPos.x, playerPos.y, player.width, player.height, GREEN);
+	DrawRectangle(playerPos.x, playerPos.y, player.width, player.height, BLUE);
 }
 
 void Player::initTextures()
@@ -45,7 +45,7 @@ void Player::initTextures()
 void Player::initVariables()
 {
 	playerPos = { 520.0f, 360.0f };
-	moveSpeed = { 350.0f, 350.0f };
+	playerSpeed = { 350.0f, 350.0f };
 }
 
 void Player::unload()
