@@ -4,8 +4,6 @@ Ball::Ball()
 {
 	initTextures();
 	initVariables();
-
-	play_obj = new Player();
 }
 
 Ball::~Ball()
@@ -15,18 +13,14 @@ Ball::~Ball()
 
 void Ball::update()
 {
-
-	ballPos.x -= ballSpeed.x * GetFrameTime();
-	ballPos.y -= ballSpeed.y * GetFrameTime();
-
-	if (ballPos.x <= 0)
-		ballPos.x = 0;
-	if (ballPos.x + radius >= 1080)
-		ballPos.x = 1080 - radius;
-	if (ballPos.y <= 0)
-		ballPos.y = 0;
-	if (ballPos.y + radius >= 720)
-		ballPos.y = 720 - radius;
+    if (ballPos.x - radius <= 0) 
+        ballPos.x = radius;
+    if (ballPos.x + radius >= 1080) 
+        ballPos.x = 1080 - radius;
+    if (ballPos.y - radius <= 0) 
+        ballPos.y = radius;
+    if (ballPos.y + radius >= 720) 
+        ballPos.y = 720 - radius;
 }
 
 void Ball::render()
@@ -48,5 +42,5 @@ void Ball::initVariables()
 
 void Ball::unload()
 {
-	delete play_obj;
+
 }

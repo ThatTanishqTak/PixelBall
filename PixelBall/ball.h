@@ -1,9 +1,6 @@
 #pragma once
 
 #include "raylib.h"
-#include "player.h"
-
-class Player;
 
 class Ball
 {
@@ -13,10 +10,7 @@ public:
 
 	void update();
 	void render();
-
 private:
-	Player* play_obj;
-
 	void initTextures();
 	void initVariables();
 

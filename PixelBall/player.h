@@ -12,7 +12,6 @@ public:
 	void render();
 
 	Rectangle player;
-
 private:
 	void initTextures();
 	void initVariables();
