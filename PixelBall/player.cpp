@@ -44,7 +44,7 @@ void Player::initTextures()
 
 void Player::initVariables()
 {
-	playerPos = { 520.0f, 360.0f };
+	playerPos = { 0.0f, 0.0f };
 	playerSpeed = { 350.0f, 350.0f };
 }
 
