@@ -25,32 +25,7 @@ void Ball::update()
 
 void Ball::render()
 {
-	DrawCircle(ballPos.x, ballPos.y , radius, WHITE);
-}
-
-Vector2 Ball::getPosition() const
-{
-    return ballPos;
-}
-
-void Ball::setPosition(const Vector2& newPos)
-{
-    ballPos = newPos;
-}
-
-Vector2 Ball::getSpeed() const
-{
-    return ballSpeed;
-}
-
-void Ball::setSpeed(const Vector2& newSpeed)
-{
-    ballSpeed = newSpeed;
-}
-
-Rectangle Ball::getCollisionRect() const
-{
-    return { ballPos.x - radius, ballPos.y - radius, radius * 2, radius * 2 };
+	DrawCircle(static_cast<int>(ballPos.x), static_cast<int>(ballPos.y) , radius, WHITE);
 }
 
 void Ball::initTextures()
