@@ -4,6 +4,8 @@ Ball::Ball()
 {
 	initTextures();
 	initVariables();
+
+    player_obj = new Player();
 }
 
 Ball::~Ball()
@@ -21,6 +23,8 @@ void Ball::update()
         ballPos.y = radius;
     if (ballPos.y + radius >= 720) 
         ballPos.y = 720 - radius;
+
+    CheckCollisionCircleRec({ ballPos.x, ballPos.y }, radius, player_obj->player);
 }
 
 void Ball::render()
@@ -38,9 +42,11 @@ void Ball::initVariables()
 	radius = 20.0f;
 	ballPos = { 540.0f, 360.0f };
 	ballSpeed = { 100.0f, 100.0f };
+
+    isPlayerTouching = false;
 }
 
 void Ball::unload()
 {
-
+    delete player_obj;
 }
