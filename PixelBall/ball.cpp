@@ -24,7 +24,7 @@ void Ball::update()
     if (ballPos.y + radius >= 720) 
         ballPos.y = 720 - radius;
 
-    CheckCollisionCircleRec({ ballPos.x, ballPos.y }, radius, player_obj->player);
+    std::cout << CheckCollisionCircleRec({ ballPos.x, ballPos.y }, radius, player_obj->player) << std::endl;
 }
 
 void Ball::render()
